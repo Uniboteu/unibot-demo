@@ -4,117 +4,148 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UniBot – BGE AI Chatbot</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background: #fff9e6;
+      background-color: #fffef5;
+      margin: 0;
+      padding: 0;
       color: #333;
     }
-
     header {
-      background: white;
-      padding: 2rem 1rem 1rem;
+      background: #ffffff;
+      padding: 2rem 1rem;
       text-align: center;
-      border-bottom: 1px solid #ddd;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
     }
-
     header img {
-      height: 70px;
+      max-width: 60px;
+      display: block;
+      margin: 0 auto 0.5rem;
     }
-
-    h1 {
-      margin: 0.5rem 0 0;
-      font-size: 1.8rem;
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
     }
-
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem;
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
     }
-
-    .intro {
-      background: #fff0b3;
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      line-height: 1.6;
-      font-size: 1.05rem;
+    nav a:hover {
+      color: #b48c00;
     }
-
-    .features {
-      background: #ffe066;
-      padding: 1.5rem;
+    .hero {
+      padding: 3rem 1rem;
+      text-align: center;
+      background: linear-gradient(to bottom, #fff9c4, #fff3e0);
+    }
+    .hero h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .section {
+      padding: 3rem 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
       margin-top: 2rem;
+    }
+    .card {
+      background: #fff4c2;
+      padding: 1.5rem;
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
-    .features h2 {
+    .card h3 {
       margin-top: 0;
+      color: #996a00;
     }
-
     footer {
       text-align: center;
-      margin-top: 4rem;
-      padding: 1rem;
+      padding: 2rem;
       font-size: 0.9rem;
-      color: #777;
+      background-color: #fdf6dc;
+      color: #888;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://raw.githubusercontent.com/Uniboteu/unibot-demo/main/bge.jpg" alt="BGE logó" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Budapesti_Gazdas%C3%A1gi_Egyetem_C%C3%ADmer.svg/1024px-Budapesti_Gazdas%C3%A1gi_Egyetem_C%C3%ADmer.svg.png" alt="BGE logó">
     <h1>UniBot – BGE AI Chatbot</h1>
+    <nav>
+      <a href="#tud">Mit tud?</a>
+      <a href="#gyik">GYIK</a>
+      <a href="#hasznalat">Használat</a>
+    </nav>
   </header>
 
-  <div class="container">
-    <div class="intro">
-      Ez a chatbot segít eligazodni a Budapesti Gazdasági Egyetem világában – választ ad általános kérdésekre, tájékoztat a tanulmányi rendszerről, határidőkről és sok másról.
-    </div>
+  <section class="hero">
+    <h1>Segítőd a BGE ügyintézésben és tanulmányi információkban</h1>
+    <p>Ez a chatbot válaszol a leggyakoribb hallgatói kérdésekre, segít eligazodni a Neptun rendszerben, a tantárgyfelvételben, valamint a szabályzatok között.</p>
+  </section>
 
-    <div class="features">
-      <h2>Mit tud az UniBot?</h2>
-      <ul>
-        <li>Válaszol GYIK-ekre (Neptun, tárgyfelvétel, kreditek, ZH-k)</li>
-        <li>Segít eligazodni a BGE-s adminisztrációban</li>
-        <li>Beépített PDF-alapú tudásbázissal dolgozik</li>
-        <li>Elérhető éjjel-nappal, akár mobilról is</li>
-      </ul>
+  <section class="section" id="tud">
+    <h2>Mit tud az UniBot?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>❌ GYIK-ekre válasz</h3>
+        <p>Neptun, kreditek, tárgyfelvétel, ZH, és sok más...</p>
+      </div>
+      <div class="card">
+        <h3>⚖️ Szabályzatok alapján</h3>
+        <p>Beolvasott PDF dokumentumokból válaszol szabályosan.</p>
+      </div>
+      <div class="card">
+        <h3>📱 Mobilról is elérhető</h3>
+        <p>Teljes funkcionalitással üzemel telefonról és tabletről is.</p>
+      </div>
+      <div class="card">
+        <h3>⏰ 0-24 üra</h3>
+        <p>Bármikor kérdezhetsz, nincsen nyitvatartás.</p>
+      </div>
     </div>
-  </div>
+  </section>
+
+  <section class="section" id="hasznalat">
+    <h2>Hogyan használd?</h2>
+    <p>Az oldal jobb alsó sarkában kattints a csevegő ikonra, írd be a kérdésed, például: "Hány kredit kell teljesíteni félévente?"</p>
+  </section>
 
   <footer>
-    © 2025 UniBot | BGE Chatbot Projekt
+    &copy; 2025 UniBot | BGE Chatbot Projekt
   </footer>
 
-  <!-- Chatbase integráció -->
+  <!-- Chatbase embed script -->
   <script>
-  (function(){
-    if(!window.chatbase||window.chatbase("getState")!=="initialized"){
-      window.chatbase=(...args)=>{
-        if(!window.chatbase.q){ window.chatbase.q=[] }
-        window.chatbase.q.push(args)
+    (function(){
+      if(!window.chatbase||window.chatbase("getState")!=="initialized"){
+        window.chatbase=(...args)=>{window.chatbase.q = window.chatbase.q || []; window.chatbase.q.push(args)};
+        window.chatbase = new Proxy(window.chatbase,{get(target, prop){if(prop==="q"){return target.q} return (...args)=>target(prop,...args)}});
+      }
+      const onLoad=function(){
+        const script=document.createElement("script");
+        script.src="https://www.chatbase.co/embed.min.js";
+        script.id="9w7N29BaKwQ9vpIl7p9QJ";
+        script.domain="www.chatbase.co";
+        document.body.appendChild(script)
       };
-      window.chatbase = new Proxy(window.chatbase, {
-        get(target, prop){
-          if(prop === "q") return target.q;
-          return (...args) => target(prop, ...args);
-        }
-      });
-    }
-    const onLoad = function(){
-      const script = document.createElement("script");
-      script.src = "https://www.chatbase.co/embed.min.js";
-      script.id = "9w7N29BaKwQ9vpIl7p9QJ";
-      script.domain = "www.chatbase.co";
-      document.body.appendChild(script);
-    };
-    if(document.readyState === "complete") onLoad();
-    else window.addEventListener("load", onLoad);
-  })();
+      if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}
+    })();
   </script>
 </body>
 </html>
+
