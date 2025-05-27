@@ -8,13 +8,31 @@
 <body>
   <h1>Üdvözöl a UniBot!</h1>
   <p>Itt egy AI-chatbot, ami válaszol BGE-s kérdésekre.</p>
+<script>
+(function(){
+  if(!window.chatbase || window.chatbase("getState")!=="initialized"){
+    window.chatbase=(...arguments)=>{
+      if(!window.chatbase.q){window.chatbase.q=[]}
+      window.chatbase.q.push(arguments)
+    };
+    window.chatbase=new Proxy(window.chatbase,{
+      get(target,prop){
+        if(prop==="q"){return target.q}
+        return(...args)=>target(prop,...args)
+      }
+    })
+  }
+  const onLoad=function(){
+    const script=document.createElement("script");
+    script.src="https://www.chatbase.co/embed.min.js";
+    script.id="9w7N29BaKwQ9vpIl7p9QJ";
+    script.domain="www.chatbase.co";
+    document.body.appendChild(script)
+  };
+  if(document.readyState==="complete"){onLoad()}
+  else{window.addEventListener("load",onLoad)}
+})();
+</script>
 
-  <!-- CHATBASE AI CHATBOT INTEGRÁCIÓ -->
-  <script>
-    window.chatbaseConfig = {
-      chatbotId: "A_TE_CHATBOT_IDD", // <- Ezt majd a saját Chatbase fiókodból cseréled ki
-    }
-  </script>
-  <script src="https://www.chatbase.co/embed.min.js" id="chatbase-script" defer></script>
 </body>
 </html>
